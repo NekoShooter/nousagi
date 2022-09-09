@@ -1,0 +1,55 @@
+:root{
+    --color-sesped:#55aa55;
+    --color-tierra:#ae5f33;
+    --color-tierra-s:#983b11;
+    --hierva:#55aa55;
+    --hiervaS:#116611;}
+
+.contenedor-superficie{
+    width:100%;
+    height:100%;
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;}
+    
+.contenedor-superficie div{position:absolute;}
+.tierra{
+    z-index:1;
+    width:100%;
+    height:100%;
+    background: linear-gradient(var(--color-tierra) ,var(--color-tierra-s));}
+
+.contenedor-sesped{
+    z-index:2;
+    width:100%;
+    height:100px;
+    overflow-x:hidden;}
+
+.contenedor-sesped .sesped{
+    z-index:3;
+    width:100%;
+    height:50%;
+    background: linear-gradient(135deg, var(--color-sesped) 25%, transparent 25%),
+                linear-gradient(-135deg, var(--color-sesped) 25%, transparent 25%);
+    background-size: 20% 100px;}
+
+.contenedor-sesped .sombra-sesped{
+    z-index:2;
+    width:100%;
+    height:50%;
+    top:15%;
+    background: linear-gradient(135deg, var(--color-tierra-s) 25%, transparent 25%),
+                linear-gradient(-135deg, var(--color-tierra-s) 25%, transparent 25%);
+    background-size: 20% 100px;}
+
+  
+.arbusto{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-image:radial-gradient(circle at 23.5% 90%, var(--hierva) 20%, transparent 20.5%),
+                     radial-gradient(circle at 82% 90%, var(--hierva) 15%,transparent 15%),
+                     radial-gradient(circle at 75% 83%, var(--hiervaS) 5%,transparent 12%),
+                     radial-gradient(circle at 30% 80%, var(--hiervaS) 5%,transparent 18%), 
+                     radial-gradient(circle at 50% 75%, var(--hierva) 35%,transparent 36%),
+                     linear-gradient(transparent 90% ,var(--hierva) 1%);}

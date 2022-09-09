@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+:root{
+    --smartw: 360px;
+    --smarth: 640px;}
+
+body{ 
+    counter-reset: juego;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: bisque;}
+
+input:checked{
+    counter-increment: juego;}
+
+.puntaje-total::after{
+    content: counter(juego);
+}
+
+
+.contenedor{
+    position:relative;
+    overflow: hidden;
+    width: var(--smartw);
+    height: var(--smarth);
+    border: 8px solid black;
+    border-radius: 20px;
+    background-color: #b4d6fd;
+    box-shadow: 0 5px 20px -5px black;}
+
+.contenedor div{position: absolute;}
+.contenedor .nousagi{z-index: 1;}
+
+.nousagi{
+    width: 110px;
+    height: 110px;}
+
+input[type=checkbox]{
+    z-index: 2;
+    appearance: none;
+    position: absolute;
+    cursor: pointer;
+    width: 110px;
+    height: 110px;
+}
+
+.capa1, .capa2{ z-index: 1;}
+
+.capa1{
+    top:18%;
+    left:18%;
+    transform: matrix(1,0,0,.9,0,17);
+    animation-name:yuki;
+    animation-duration:1.2s;
+    animation-iteration-count:infinite;}
+
+.capa1 .nousagi .boca{ 
+    animation-name: yuki-doki;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;}
+
+@keyframes yuki{
+    0%{transform: matrix(1,0,0,.9,0,17);}
+    30%{transform: matrix(1,0,0,1,0,-60);}
+    45%{transform: matrix(.95,0,0,1.1,4,-53);}
+    60%{transform: translateY(1px);}
+    62%{transform: matrix(1,0,0,.9,0,17);}
+    80%{transform: matrix(1,0,0,1,0,0);}}
+
+@keyframes yuki-doki{
+    0%{background-image:var(--bocaCerrada);}
+    50%{background-image:var(--bocaCerrada);}}
+
+.capa2{
+    top:36%;
+    right:48%;
+    animation-name:sumi;
+    animation-duration:10s;
+    animation-iteration-count:infinite;}
+
+@keyframes sumi{
+    30%{transform: matrix(1,0,0,1,0,-80);}
+    31%{transform: matrix(.95,0,0,1.2,4,-74);}
+    32%{transform: initial;}
+    37%{transform: matrix(0,1,-1,0,0,17)}
+    60%{transform: matrix(0,1,-1,0,196,17);}
+    61%{transform: matrix(0,.95,-1.2,0,192,21);}
+    62%{transform: matrix(0,1,-1,0,105,17);}
+    64%{transform: initial;}
+    65%{transform: matrix(0,-1,1,0,-50,127);}
+    90%{transform: matrix(0,-1,1,0,-210,127);}
+    91%{transform: matrix(0,-.95,1,0,-206,121);}
+    92%{transform: matrix(0,-.95,1,0,-124,121);}
+    93%{transform: initial;}}
+
+.capa3{
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom:0;
+    width: 250px;
+    height: 400px;}
+
+.capa4{
+    z-index: 4;
+    left:-3%;
+    top:39%;
+    animation-name: cave;
+    animation-duration:1.5s;
+    animation-timing-function:cubic-bezier(.79,-0.54,.24,1.48);
+    animation-iteration-count:infinite;}
+
+.capa4 .nousagi .boca{
+    animation-name: cave-doki;
+    animation-duration:9s;
+    animation-iteration-count:infinite;}
+
+@keyframes cave{
+    0%{transform: matrix(.9,0,-.1,1,9,-2);}
+    35%{transform: matrix(1,0,.1,.9,100,8);}
+    47%{transform: matrix(.9,0,-.1,1,130,-2);}
+    50%{transform: matrix(1,0,0,1,110,0);}
+    61%{transform: matrix(1,0,0,1,110,0);}
+    64%{transform: matrix(.9,0,.1,1,100,-2);}
+    86%{transform: matrix(1,0,-.1,.9,-5,8);}
+    89%{transform: matrix(1,0,0,1,0,0);}}
+
+@keyframes cave-doki{
+    0%{background-image: var(--bocaCerrada);}
+    7%{background-image: var(--boca);}
+    10%{background-image: var(--bocaSemiAbierta);}
+    11%{background-image: var(--bocaSemiAbierta);}
+    49%{background-image: var(--bocaCerrada);}
+    65%{background-image: var(--boca);}
+    80%{background-image: var(--bocaCerrada);}
+    90%{background-image: var(--bocaCerrada);}}
+
+
+.capa5{
+    z-index: 5;
+    width: 200px;
+    height: 275px;
+    left: 0;
+    bottom: 0;}
+
+.capa6{
+    z-index: 6;
+    top:51%;
+    right: 37%;
+    transform: matrix(1,0,.2,.9,-20,17);
+    animation-name:tusky;
+    animation-duration:9s;
+    animation-iteration-count:infinite;}
+
+@keyframes tusky{
+    0%{transform: matrix(1,0,.2,.9,-20,17);}
+    3%{transform: scaleY(1) translate(-20px, -70px) rotateZ(15deg);}
+    4%{transform: matrix(.9,0,-.2,1.1,-20,-70);}
+    7%{transform: matrix(.9,.1,0,1,8,-70) rotateZ(-45deg);}
+    10%{z-index: 8; transform: matrix(0,-1,1,0,10,118);}
+    11%{transform: matrix(1,0,0,1,20,140) rotate(-110deg);}
+    12%{transform: matrix(1,0,0,1,36,158) rotate(-135deg);}
+    13%{transform: matrix(1,0,0,1,54,161) rotate(-160deg);}
+    14%{transform: matrix(1,0,0,1,55,155) rotate(-170deg);}
+    15%{transform: matrix(1,0,0,1,60,145) rotate(-180deg);}
+    17%{transform: matrix(1,0,0,1,55,115) rotate(-205deg);}
+    21%{transform: matrix(1,0,0,1,-7,70) rotate(-270deg);}
+    26%{transform: matrix(1,0,0,1,-140,210) rotate(-360deg);}
+    27%{transform: matrix(1,0,.2,.9,-160,210) rotate(-360deg);}
+    30%{z-index: 8;transform: matrix(1,0,0,1,-195,210) rotate(-360deg);}
+    45%{transform: matrix(1,0,0,1,-215,210) rotate(-360deg);}
+    55%{transform: matrix(1,0,0,1,0,180) rotate(-360deg);}
+    60%{transform: matrix(1,0,0,1,500,210) rotate(-360deg);}
+    70%{transform: matrix(1,0,0,1,0,210);}
+    85%{transform: matrix(1,0,0,1,0,110);}
+    91%{transform: matrix(.95,0,0,1.1,4,-53);}
+    93%{transform: translateY(1px);}
+    94%{transform: matrix(1,0,0,.9,0,17);}
+    95%{transform: matrix(1,0,0,1,0,0);}
+    99%{transform: matrix(1,0,0,1,0,0);}}
+
+.capa6 .nousagi .boca{
+    animation-name: tutsky-doki;
+    animation-duration: 9s;
+    animation-iteration-count:infinite;}
+
+@keyframes tutsky-doki{
+    0%{background-image: var(--bocaCerrada);}
+    8%{background-image: var(--bocaCerrada);}
+    9%{background-image: var(--bocaSemiAbierta);}
+    15%{background-image: var(--bocaSemiAbierta);}
+    16%{background-image: var(--boca);}}
+
+.capa7{
+    z-index: 7;
+    width: 175px;
+    height: 200px;
+    bottom: 0;
+    right:0;}
+
+.capa7 > div, .capa5 > div, .capa3 > div{
+    border-left: 2px solid #5a2e19;
+    border-right: 2px solid #5a2e19;}
+
+
+.capa8{
+    z-index: 8;
+    width: 200px;
+    height: 200px;
+    bottom:0;
+    left: -10%;}
+
+.capa9{
+    z-index: 9;
+    width: 100px;
+    height: 100px;
+    bottom:0;
+    right: 0;}
+
+.capa10{
+    z-index: 10;
+    width: 100%;
+    height: 10%;
+    display: grid;
+    place-content: center;
+    
+}
+.capa10 .sanaorin{
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 35%;
+    width: 20%;
+    height: 300%;
+    margin: auto 0;
+    transform:rotateZ(-90deg);}
+
+.capa10 .puntaje-total{
+    z-index: 2;
+}

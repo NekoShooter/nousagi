@@ -1,0 +1,190 @@
+:root{
+    --lineart-sana:2px solid #a60;
+    --lineart-coli:2px solid #060;}
+  
+.sanaorin{
+    width: 50px;
+    height:125px;
+    position: relative;}
+
+.sanaorin div{position:absolute;}
+
+.sanaorin .coli{
+    z-index:3;
+    top:2%;
+    left:0;
+    right:0;
+    margin:0 auto;
+    width:30%;
+    height:30%;
+    background-color:#090;
+    border-radius:25%;
+    border:var(--lineart-coli);}
+  
+.sanaorin .cd, .sanaorin .ci{
+    z-index:2;
+    width:20%;}
+.sanaorin .cd{
+    transform:rotateZ(-25deg);
+    right:50%;}
+.sanaorin .ci{
+    transform:rotateZ(25deg);
+    left:50%;}
+  
+.sanaorin .sana{
+    z-index:1;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0 auto;
+    width:80%;
+    height:80%;
+    border-radius:50%;
+    background-color:#ffbb00;
+    border-bottom:var(--lineart-sana);
+    border-left:var(--lineart-sana);
+    border-right:var(--lineart-sana);}
+:root{
+    --lineart-nousagi:2px solid #005;
+    --tam:500px;
+    --tiempoSTD:2s;}
+
+.nousagi{
+    width: 100%;
+    height:100%;
+    position:relative;}
+
+.nousagi div{position:absolute;}
+  
+.cuerpo{
+    z-index:2;
+    right:0;
+    left:0;
+    bottom:0;
+    margin:0 auto;
+    width:80%;
+    height:65%;
+    background-color:#FFF;
+    border-radius:50%;
+    border:var(--lineart-nousagi);
+    background-image: radial-gradient(circle at 80% 65%, #ffe9ee 0, transparent 20%),
+                    radial-gradient(circle at 20% 65%, #ffe9ee 0, transparent 20%);
+    animation-name:doki;
+    animation-duration:var(--tiempoSTD);
+    animation-iteration-count:infinite;}
+
+@keyframes doki{
+    50%{height:63%;}}
+  
+.oreja{
+    z-index:1;
+    width:30%;
+    height:40%;
+    top:5%;
+    background-color:#fff;
+    border-radius:50%;
+    border-top:var(--lineart-nousagi);
+    border-right:var(--lineart-nousagi);}
+
+.od{right:10%;
+    transform:scale(.60, 1.25) skewX(-45deg) rotateZ(-45deg);
+    animation-name:orejinD;
+    animation-duration:var(--tiempoSTD);
+    animation-iteration-count:infinite;}
+
+.oi{left:10%;
+    transform:scale(.60, 1.25) skewX(25deg) rotateZ(-45deg);
+    animation-name:orejinI;
+    animation-duration:var(--tiempoSTD);
+    animation-iteration-count:infinite;}
+  
+@keyframes orejinD{
+    50%{top:8%;
+        transform:scale(.60, 1.3) skewX(-50deg) rotateZ(-45deg);}}
+  
+@keyframes orejinI{
+    50%{top:8%;
+        transform:scale(.60, 1.3) skewX(35deg) rotateZ(-45deg);}}
+  
+.nousagi .sanaorin{
+    width: 15%;
+    height:40%;
+    top:-10%;}
+  
+.si{transform:rotateZ(-115deg);
+    left:18%;}
+  
+.sd{transform:rotateZ(115deg);
+    right:18%;}
+  
+:root{
+    --ojo:radial-gradient(circle at 25% 25%, #fff 10%, transparent 15%),
+          radial-gradient(circle at 50% 80%, #f3af78 20%, transparent 25%),
+          radial-gradient(circle at 50% 10%, #563230 10%, transparent 50%),
+          radial-gradient(circle at 50% 80%,#e1975d , transparent 55%);
+    
+    --ojoSemiCerrado:radial-gradient(circle at 50% -5%, #fff 40%, transparent 40%),var(--ojo);
+    
+    --ojoCerrado:radial-gradient(circle at 50% 40%, #fff 50%, transparent 50%),
+                 radial-gradient(circle at 50% 80%, #000 50%, #fff 50%);
+    
+    --lineartOjo:2px solid #8f534f;}
+  
+.nousagi .ojo{
+      width:10%;
+      height:18%;
+      top:30%;
+      background-color:#bd6863;
+      border-radius:50%;
+      background-image: var(--ojo);
+      border:var(--lineartOjo);
+      animation-name:parpadeo;
+      animation-duration:3s;
+      animation-iteration-count:infinite;}
+  
+@keyframes parpadeo{
+    1%{ border:none;
+        background-image:var(--ojoSemiCerrado);
+        border-bottom: var(--lineartOjo);}
+        
+    3%{ border:none;
+        background-image:var(--ojoCerrado);}
+    
+    5%{ background-image:var(--ojoSemiCerrado);
+        border-bottom:var(--lineartOjo);}
+    
+    6%{ background-image: var(--ojo);
+        border:var(--lineartOjo);}}
+  
+  .ojo-d{ right:25%;}
+  .ojo-i{ left:25%;}
+  
+:root{
+    --colorBaseBoca:#ac6165;
+    --sb:radial-gradient(circle at 25% -50%, #fff 40%, transparent 41%),
+         radial-gradient(circle at 75% -50%, #fff 40%, transparent 41%);
+    --ib:radial-gradient(circle at 50% 115%, #eea795 59%, transparent 60%);
+    
+    --boca:var(--ib),var(--sb);
+    --bocaCerrada:radial-gradient(circle at 50% -30%, #fff 50%, transparent 51%),
+                 radial-gradient(circle at 50% -5%, var(--colorBaseBoca) 47%, #fff 48%);
+    --bocaSemiAbierta:radial-gradient(circle at 50% 50%, transparent 50%, #fff 51%),var(--ib);}
+  
+.nousagi .boca{
+    width:30%;
+    height:30%;
+    left:0;
+    right:0;
+    margin:0 auto;
+    bottom:17%;
+    background-color:var(--colorBaseBoca);
+    border-radius:50%;
+    background-image:var(--boca);
+    animation-name:feliz;
+    animation-duration:var(--tiempoSTD);
+    animation-iteration-count:infinite;}
+  
+@keyframes feliz{
+    50%{ width:32%;
+        height:32%;
+        bottom:16%;}}
