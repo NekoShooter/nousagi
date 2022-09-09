@@ -60,11 +60,6 @@ input[type=checkbox]{
     animation-duration:1.2s;
     animation-iteration-count:infinite;}
 
-.capa1 .nousagi .boca{ 
-    animation-name: yuki-doki;
-    animation-duration: 1.2s;
-    animation-iteration-count: infinite;}
-
 @keyframes yuki{
     0%{transform: matrix(1,0,0,.9,0,17);}
     30%{transform: matrix(1,0,0,1,0,-60);}
@@ -72,6 +67,9 @@ input[type=checkbox]{
     60%{transform: translateY(1px);}
     62%{transform: matrix(1,0,0,.9,0,17);}
     80%{transform: matrix(1,0,0,1,0,0);}}
+
+.capa1 .nousagi .boca{ 
+    animation: yuki-doki 1.2s infinite;}
 
 @keyframes yuki-doki{
     0%{background-image:var(--bocaCerrada);}
@@ -118,9 +116,7 @@ input[type=checkbox]{
     animation-iteration-count:infinite;}
 
 .capa4 .nousagi .boca{
-    animation-name: cave-doki;
-    animation-duration:9s;
-    animation-iteration-count:infinite;}
+    animation: cave-doki 9s infinite;}
 
 @keyframes cave{
     0%{transform: matrix(.9,0,-.1,1,9,-2);}
@@ -187,11 +183,9 @@ input[type=checkbox]{
     99%{transform: matrix(1,0,0,1,0,0);}}
 
 .capa6 .nousagi .boca{
-    animation-name: tutsky-doki;
-    animation-duration: 9s;
-    animation-iteration-count:infinite;}
+    animation: tusky-doki 9s infinite;}
 
-@keyframes tutsky-doki{
+@keyframes tusky-doki{
     0%{background-image: var(--bocaCerrada);}
     8%{background-image: var(--bocaCerrada);}
     9%{background-image: var(--bocaSemiAbierta);}
